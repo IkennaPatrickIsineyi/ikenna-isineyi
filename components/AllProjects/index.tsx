@@ -57,9 +57,9 @@ export default function AllProjects() {
     }
 
     return <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '100%' }}>
-        <UiText size='large' fontFamily='inter' fontWeight={700} value={'All Projects'}
+        {Boolean(projects.length) && <UiText size='large' fontFamily='inter' fontWeight={700} value={'All Projects'}
             color='text.primary'
-        />
+        />}
 
         <UiSpacer direction="vertical" size="small" />
 

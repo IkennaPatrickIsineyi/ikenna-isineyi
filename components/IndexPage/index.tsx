@@ -11,6 +11,7 @@ import AllPosts from "../AllPosts";
 import { useEffect, useState } from "react";
 import { useApi } from "@/services/api";
 import UiLoader from "../UiLoader";
+import NoContent from "../NoContent";
 
 //let initialised = false;
 
@@ -48,7 +49,10 @@ export default function IndexPage() {
         <UiSpacer size="large" direction="vertical" />
 
         <UiContainer size="large">
-            {recent ? <RecentPosts posts={recent} /> : <UiLoader />}
+            {recent ?
+                recent.length ? <RecentPosts posts={recent} />
+                    : <NoContent title="No blog posts at the moment. Please check back later" />
+                : <UiLoader />}
         </UiContainer>
 
         <UiContainer size="large">

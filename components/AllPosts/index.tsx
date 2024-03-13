@@ -59,9 +59,9 @@ export default function AllPosts() {
     }
 
     return <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '100%' }}>
-        <UiText size='large' fontFamily='inter' fontWeight={700} value={'All Blog Posts'}
+        {Boolean(posts.length) && <UiText size='large' fontFamily='inter' fontWeight={700} value={'All Blog Posts'}
             color='text.primary'
-        />
+        />}
 
         <UiSpacer direction="vertical" size="small" />
 
