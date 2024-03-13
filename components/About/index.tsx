@@ -9,6 +9,7 @@ import UiText from "../UiText";
 import UiSpacer from "../UiSpacer";
 import { useApi } from "@/services/api";
 import UiLoader from "../UiLoader";
+import { markdownToHtml } from "@/utils/markdownToHtml";
 
 type AboutType = {
     image?: string,
@@ -23,6 +24,12 @@ export default function About() {
     const [data, setData] = useState<AboutType | null>(null)
     const { request, processing, error, success } = useApi();
 
+    const updateData = (value: {}) => {
+        setData((state) => {
+            return { ...(state as AboutType), ...value }
+        })
+    }
+
     const getData = async () => {
         const res = await request({
             method: 'GET',
@@ -31,7 +38,10 @@ export default function About() {
 
         if (res?.data) {
             console.log('data of about', res.data)
-            setData(res?.data?.about);
+            markdownToHtml(res?.data?.about?.experience).then((res: string) => updateData({ experience: res }), err => console.log)
+            markdownToHtml(res?.data?.about?.education).then((res: string) => updateData({ education: res }), err => console.log)
+            markdownToHtml(res?.data?.about?.skills).then((res: string) => updateData({ skills: res }), err => console.log)
+            markdownToHtml(res?.data?.about?.about).then((res: string) => updateData({ about: res }), err => console.log)
         }
     }
 
