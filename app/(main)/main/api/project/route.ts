@@ -22,6 +22,7 @@ export async function GET(req: Request) {
 
         let projects = await Project.find({})
             .skip(offset || 0)
+            .sort({ '_id': 'desc' })
             .limit(limit || 0);
 
         //Get users
