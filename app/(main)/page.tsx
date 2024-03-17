@@ -1,12 +1,12 @@
 
-import IndexPage from "@/components/IndexPage";
+import Projects from "@/components/Projects";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | Ikenna Isineyi",
-  description: "This is the blog section",
+  title: "Projects | Ikenna Isineyi",
+  description: "This is the project section",
 };
 
 export default function Home() {
-  return <IndexPage />;
+  return <Projects />;
 }

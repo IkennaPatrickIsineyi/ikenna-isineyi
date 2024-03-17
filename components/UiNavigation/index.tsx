@@ -50,8 +50,9 @@ export default function UiNavigation({ menuItems, isDarkMode, toggleDarkMode }: 
     const currentPath = `/${usePathname().split('/')[1]}`
 
     const pathMapping: { [key: string]: string } = {
-        '/': '/',
-        '/post': '/',
+        '/': '/projects',
+        '/post': '/post',
+        '/blog': '/blog',
         '/projects': '/projects',
         '/project': '/projects',
         '/newsletter': '/newsletter',

@@ -10,6 +10,7 @@ const actions = [
     { label: 'Github', url: 'https://github.com/in/ikenna-isineyi' },
 ]
 
+
 export default function Footer() {
     return <UiContainer size="large" sx={{ mt: 'auto', pb: 2 }}>
         <Box sx={{
