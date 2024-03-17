@@ -6,9 +6,8 @@ import UiText from "../UiText";
 import moment from "moment";
 
 const actions = [
-    { label: 'Twitter', url: 'https://twitter.com' },
-    { label: 'Linkedin', url: 'https://linkedin.com' },
-    { label: 'Github', url: 'https://github.com' },
+    { label: 'Linkedin', url: 'https://linkedin.com/IkennaPatrickIsineyi' },
+    { label: 'Github', url: 'https://github.com/in/ikenna-isineyi' },
 ]
 
 export default function Footer() {
