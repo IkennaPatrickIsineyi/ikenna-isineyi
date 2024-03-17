@@ -6,8 +6,8 @@ import UiText from "../UiText";
 import moment from "moment";
 
 const actions = [
-    { label: 'Linkedin', url: 'https://linkedin.com/IkennaPatrickIsineyi' },
-    { label: 'Github', url: 'https://github.com/in/ikenna-isineyi' },
+    { label: 'Linkedin', url: 'https://linkedin.com/in/ikenna-isineyi' },
+    { label: 'Github', url: 'https://github.com/IkennaPatrickIsineyi' },
 ]
 
 
@@ -34,7 +34,7 @@ export default function Footer() {
 
             {/* Action buttons */}
             {actions.map((item, index) => {
-                return <a key={index} href={item.url} style={{ textDecoration: 'none', marginRight: '8px' }}>
+                return <a key={index} target='_blank' href={item.url} style={{ textDecoration: 'none', marginRight: '8px' }}>
                     <UiText size="normal" value={item.label} color='text.primary'
                         fontFamily="inter" fontWeight={400}
                     />
